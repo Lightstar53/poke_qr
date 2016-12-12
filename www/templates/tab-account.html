@@ -1,0 +1,10 @@
+<ion-view view-title="QR Codes">
+   <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="code in codes" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{code.img}}" height="200">
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
