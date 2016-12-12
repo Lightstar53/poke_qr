@@ -1,1 +1,6 @@
 /* Empty. Add your own CSS if you like */
+ion-content.home-background {
+    background-image: url("../img/pokebackground.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

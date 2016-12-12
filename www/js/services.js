@@ -92,13 +92,30 @@ angular.module('starter.services', [])
   // Number of new pokemon
   for (var index=0; index<81; index++){
 
+    var name_url = name_text[index].toLowerCase();
+    
+    // Special cases
+    switch(name_text[index]) {
+    case "Wishiwashi:
+        name_url = name_text[index].toLowerCase()+'-'+"solo";
+        break;
+    case n:
+        code block
+        break;
+    default:
+        default name_url = name_url;
+    var icon_url = 'https://img.pokemondb.net/artwork/'+name_url+'.jpg';
+    
+
+    if(name_url == name_text[index].toLowerCase())
+
     chats.push({
     id: idnum,
     name: name_text[index],
     lastText: '#'+pokenum,
     face: 'http://www.serebii.net/Shiny/SM/'+pokenum+'.png',
     reg_face: 'http://www.serebii.net/sunmoon/pokemon/'+pokenum+'.png',
-    icon: 'https://img.pokemondb.net/artwork/'+name_text[index].toLowerCase()+'.jpg'
+    icon: icon_url
   });
     idnum++;
     pokenum++;
