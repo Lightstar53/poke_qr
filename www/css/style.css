@@ -4,3 +4,25 @@ ion-content.home-background {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
+.right-image{
+	float:right;
+	max-width: 80px;
+	max-height: 80px;
+}
+.left-image{
+	float:left;
+	max-width: 80px;
+	max-height: 80px;
+}
+.center-image{
+	float:center;
+	max-width: 80px;
+	max-height: 80px;
+}
+
+
+
+.item-content{
+	background-color:#ffffff;
+}

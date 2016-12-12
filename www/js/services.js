@@ -94,6 +94,7 @@ angular.module('starter.services', [])
 
     var name_url = name_text[index].toLowerCase();
     
+    /*
     // Special cases
     switch(name_text[index]) {
     case "Wishiwashi:
@@ -104,6 +105,7 @@ angular.module('starter.services', [])
         break;
     default:
         default name_url = name_url;
+        */
     var icon_url = 'https://img.pokemondb.net/artwork/'+name_url+'.jpg';
     
 
