@@ -69,15 +69,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  })
   .state('tab.items', {
     url: '/items',
     views: {
@@ -102,6 +93,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         'tab-alolans': {
           templateUrl: 'templates/alolan-detail.html',
           controller: 'AlolanDetailCtrl'
+        }
+      }
+    })
+  .state('tab.nationals', {
+    url: '/nationals',
+    views: {
+      'tab-nationals': {
+        templateUrl: 'templates/tab-nationals.html',
+        controller: 'NationalCtrl'
+      }
+    }
+  })
+  .state('tab.national-detail', {
+      url: '/nationals/:nationalId',
+      views: {
+        'tab-nationals': {
+          templateUrl: 'templates/national-detail.html',
+          controller: 'NationalDetailCtrl'
         }
       }
     });
