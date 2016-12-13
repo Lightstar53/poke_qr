@@ -1,39 +1,37 @@
 
-
-<ion-view view-title="{{chat.name[0]}} {{chat.poke_num}}">
+<ion-view view-title="{{national.name}} #{{national.id}}">
   <ion-content class="padding">
 
         <button class="button button button-calm ">
           Types: 
         </button>
         <button class="button capitalize button-clear button-positive" ng-repeat="n in [0,1]" ng-class="button-assertive">
-          {{chat.type[n]}}
+          {{national.types[n]}}
         </button>
-        
-        <button class="button button button-royal">
+
+       <button class="button button button-royal">
           Egg groups:
         </button>
 
         <button class="button capitalize button-clear button-royal" ng-repeat="n in [0,1]" ng-class="button-assertive">
-          {{chat.eggs[n]}}
+          {{national.eggs[n]}}
         </button>
-        
-        <div class="row"> 
+      <div class="row"> 
 
-          <div class="col-sm-6">
+        <div class="col-sm-6">
           <div class="card">
             <div class="item item-divider" >
-              Regular {{chat.name[0]}}
+              Regular {{national.name}}
             </div>
-            <img ng-src="{{chat.reg_sprite[n]}}" ng-repeat="n in [0,1]" >
+            <img class = "padding" ng-src="{{national.reg_sprite[n]}}" ng-repeat="n in [0,1,2,3,4,5,6,7]" >
           </div>
         </div>
 
           <div class="card">
             <div class="item item-divider">
-              Shiny {{chat.name[0]}}
+              Shiny {{national.name}}
             </div>
-            <img ng-src="{{chat.shiny_sprite[n]}}" ng-repeat="n in [0,1"] >
+            <img class = "padding" ng-src="{{national.shiny_sprite[n]}}" ng-repeat="n in [0,1]" >
           </div>
         </div>
 
@@ -41,15 +39,7 @@
           <div class="item item-divider" >
             Able to breed with
           </div>
-          <img ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: '!Undiscovered' | filter: {egg1: chat.egg1, egg2: chat.egg2}">
-        </div>
-      </div>
-
-        <div class="card">
-          <div class="item item-divider">
-            QR Code
-          </div>
-          <img ng-src="{{chat.code}}" height="200" >
+          <img ng-src="{{poke.reg_sprite[0]}}" ng-repeat="poke in nationals">
         </div>
 
   </ion-content>

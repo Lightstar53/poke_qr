@@ -1,14 +1,14 @@
-<ion-view view-title="Sprites">
+<ion-view view-title="National Pokedex">
   <ion-content>
   <label class="item item-input">
       <i class="icon ion-search placeholder-icon"></i>
       <input type="search" placeholder="Search Pokemon or ID" ng-model="searchText">
     </label>
     <ion-list>
-      <ion-item class="item-icon-right" ng-repeat="chat in chats | filter:searchText" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-          <img ng-src="{{chat.icon}}" height = "60" class = "left-image">
+      <ion-item class="item-icon-right" ng-repeat="national in nationals | filter:searchText" type="item-text-wrap" href="#/tab/nationals/{{national.id}}">
+          <img ng-src="{{national.icon}}" height = "60" class = "left-image">
           <i class="icon ion-information-circled icon-accessory"></i>
-          <p style= "text-align: center">[{{chat.poke_num}}] {{chat.name[0]}} </p>
+          <p style= "text-align: center">[#{{national.id}}] {{national.name}} </p>
       </ion-item>
 
     </ion-list>
