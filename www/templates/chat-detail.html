@@ -1,25 +1,43 @@
 
-<ion-view view-title="{{chat.name}} {{chat.lastText}}">
+<ion-view view-title="{{chat.name[0]}} {{chat.poke_num}}">
   <ion-content class="padding">
-    <div class="row">
 
-      <div class="col-sm-6">
+        <button class="button button button-calm ">
+          Types: 
+        </button>
+        <button class="button capitalize button-clear button-royal" ng-repeat="n in [0,1]" ng-class="button-assertive">
+          {{chat.type[n]}}
+        </button>
+        <br>
+        <button class="button button button-royal">
+          Egg groups:
+        </button>
+
+        <button class="button capitalize button-clear button-royal" ng-repeat="n in [0,1]" ng-class="button-assertive">
+          {{chat.eggs[n]}}
+        </button>
+        
         <div class="card">
-          <div class="item item-divider">
-            Regular {{chat.name}}
+          <div class="item item-divider" >
+            Regular {{chat.name[0]}}
           </div>
-          <img ng-src="{{chat.reg_face}}" >
+          <img ng-src="{{chat.reg_sprite[n]}}" ng-repeat="n in [0,1,2,3,4,5,6,7]" >
         </div>
       </div>
 
-      <div class="col-sm-6">
         <div class="card">
           <div class="item item-divider">
-            Shiny {{chat.name}}
+            Shiny {{chat.name[0]}}
           </div>
-          <img ng-src="{{chat.face}}" >
+          <img ng-src="{{chat.shiny_sprite[n]}}" ng-repeat="n in [0,1,2,3,4]" >
         </div>
-      </div>
-    </div>
+
+        <div class="card">
+          <div class="item item-divider">
+            QR Code
+          </div>
+          <img ng-src="{{chat.code}}" height="200" >
+        </div>
+
   </ion-content>
 </ion-view>

@@ -20,9 +20,26 @@ ion-content.home-background {
 	max-width: 80px;
 	max-height: 80px;
 }
-
-
-
 .item-content{
 	background-color:#ffffff;
+}
+.odd {
+  color: red;
+  background-color:#ffffff;
+}
+.even {
+  color: blue;
+  background-color:	#FF0000;
+}
+
+ion-content{
+background-color:	#E8F8F5
+}
+
+ion-item{
+background-color:	#E8F8F5
+}
+
+.capitalize {
+text-transform: capitalize;   
 }

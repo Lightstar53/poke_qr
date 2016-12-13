@@ -1,10 +1,10 @@
-<ion-view view-title="Sprites">
+<ion-view view-title="Alolan">
   <ion-content>
     <ion-list>
-      <ion-item class="item-icon-right" ng-repeat="chat in chats | filter:searchText" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-          <img ng-src="{{chat.icon}}" height = "60" class = "left-image">
+      <ion-item class="item-icon-right" ng-repeat="alolan in alolans | filter:searchText" type="item-text-wrap" >
+          <img ng-src="{{alolan.icon}}" height = "60" class = "left-image">
           <i class="icon ion-information-circled icon-accessory"></i>
-          <p style= "text-align: center">[{{chat.poke_num}}] {{chat.name[0]}} </p>
+          <p style= "text-align: center">[#{{alolan.id}}] {{alolan.name}} </p>
       </ion-item>
 
     </ion-list>
