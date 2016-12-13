@@ -1,0 +1,32 @@
+
+<ion-view view-title="{{alolan.name}} #{{alolan.id}}">
+  <ion-content class="padding">
+
+  		<div class="row"> 
+
+          <div class="col-sm-6">
+          <div class="card">
+            <div class="item item-divider" >
+              Regular {{alolan.name}}
+            </div>
+            <img ng-src="{{alolan.reg_sprite[n]}}" alt=" "  ng-repeat="n in [0,1]" >
+          </div>
+        </div>
+
+          <div class="card">
+            <div class="item item-divider">
+              Shiny {{alolan.name}}
+            </div>
+            <img ng-src="{{alolan.shiny_sprite[n]}}" alt=" " ng-repeat="n in [0,1]" >
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="item item-divider">
+            QR Code
+          </div>
+          <img ng-src="{{alolan.code}}" height="200" >
+        </div>
+
+  </ion-content>
+</ion-view>

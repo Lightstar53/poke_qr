@@ -5,10 +5,10 @@
         <button class="button button button-calm ">
           Types: 
         </button>
-        <button class="button capitalize button-clear button-royal" ng-repeat="n in [0,1]" ng-class="button-assertive">
+        <button class="button capitalize button-clear button-positive" ng-repeat="n in [0,1]" ng-class="button-assertive">
           {{chat.type[n]}}
         </button>
-        <br>
+        
         <button class="button button button-royal">
           Egg groups:
         </button>
@@ -17,20 +17,32 @@
           {{chat.eggs[n]}}
         </button>
         
-        <div class="card">
-          <div class="item item-divider" >
-            Regular {{chat.name[0]}}
+        <div class="row"> 
+
+          <div class="col-sm-6">
+          <div class="card">
+            <div class="item item-divider" >
+              Regular {{chat.name[0]}}
+            </div>
+            <img ng-src="{{chat.reg_sprite[n]}}" ng-repeat="n in [0,1,2,3,4,5,6,7]" >
           </div>
-          <img ng-src="{{chat.reg_sprite[n]}}" ng-repeat="n in [0,1,2,3,4,5,6,7]" >
         </div>
-      </div>
+
+          <div class="card">
+            <div class="item item-divider">
+              Shiny {{chat.name[0]}}
+            </div>
+            <img ng-src="{{chat.shiny_sprite[n]}}" ng-repeat="n in [0,1,2,3,4]" >
+          </div>
+        </div>
 
         <div class="card">
-          <div class="item item-divider">
-            Shiny {{chat.name[0]}}
+          <div class="item item-divider" >
+            Able to breed with
           </div>
-          <img ng-src="{{chat.shiny_sprite[n]}}" ng-repeat="n in [0,1,2,3,4]" >
+          <img ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter:chat.egg1 | filter:chat.egg2" onclick="" >
         </div>
+      </div>
 
         <div class="card">
           <div class="item item-divider">

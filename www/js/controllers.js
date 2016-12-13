@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
-  $scope.info_url = "sdfsdf";
+  $scope.chats = Chats.all();
 })
 
 .controller('AccountCtrl', function($scope, Codes) {
@@ -24,4 +24,8 @@ angular.module('starter.controllers', [])
 
 .controller('AlolanCtrl', function($scope, Alolan) {
 	$scope.alolans = Alolan.all();
+})
+
+.controller('AlolanDetailCtrl', function($scope, $stateParams, Alolan) {
+  $scope.alolan = Alolan.get($stateParams.alolanId);
 });

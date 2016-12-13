@@ -117,9 +117,6 @@ angular.module('starter.services', [])
     all: function() {
       return chats;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
     get: function(chatId) {
       for (var i = 0; i < chats.length; i++) {
         if (chats[i].id === parseInt(chatId)) {
@@ -138,10 +135,10 @@ angular.module('starter.services', [])
   var idnum =1;
 
   // Number of qr codes
-  for (var index=0; index<472; index++){
+  for (var index=0; index<316; index++){
     codes.push({
     id: idnum,
-    img: 'img/QR/qr ('+idnum+').png'
+    img: 'img/QR_alolan/alolan ('+idnum+').png'
   });
     idnum++;
   }
@@ -174,6 +171,8 @@ angular.module('starter.services', [])
 
     var name_url = alolan_poke[index].toLowerCase();
 
+    var code_url = 'img/QR_alolan/alolan ('+idnum+').png';
+
     if(name_url == "oricorio")
       name_url+="-baile";
     else if (name_url == "lycanroc")
@@ -184,16 +183,30 @@ angular.module('starter.services', [])
       name_url = "tmp/790";
     else if (name_url == "marshadow")
       name_url = "tmp/802";
-
     if(!name_url.includes("tmp"))
       var icon_url = 'https://img.pokemondb.net/artwork/'+name_url+'.jpg';
     else
       var icon_url = 'https://img.pokemondb.net/artwork/'+name_url+'.png';
 
+    if(name_url.includes("alolan"))
+      name_url = name_url.slice(0,name_url.length-1);
+
+    var l_shiny_url = [];
+    l_shiny_url.push('http://play.pokemonshowdown.com/sprites/xyani-shiny/'+name_url+'.gif');
+    l_shiny_url.push('http://play.pokemonshowdown.com/sprites/xyani-back-shiny/'+name_url+'.gif');
+
+    var l_reg_url = [];
+    l_reg_url.push('http://play.pokemonshowdown.com/sprites/xyani/'+name_url+'.gif');
+    l_reg_url.push('http://play.pokemonshowdown.com/sprites/xyani-back/'+name_url+'.gif');
+
+    code_url = 
     alolans.push({
     id: idnum,
     icon: icon_url,
-    name: alolan_poke[index]
+    name: alolan_poke[index],
+    shiny_sprite: l_shiny_url,
+    reg_sprite: l_reg_url,
+    code: code_url
   });
     idnum++;
   }
@@ -201,9 +214,9 @@ angular.module('starter.services', [])
     all: function() {
       return alolans;
     },
-    get: function(alolanID) {
+    get: function(alolanId) {
       for (var i = 0; i < alolans.length; i++) {
-        if (alolans[i].id === parseInt(alolanID)) {
+        if (alolans[i].id === parseInt(alolanId)) {
           return alolans[i];
         }
       }

@@ -87,15 +87,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  .state('tab.alolan', {
-    url: '/alolan',
+  .state('tab.alolans', {
+    url: '/alolans',
     views: {
-      'tab-alolan': {
-        templateUrl: 'templates/tab-alolan.html',
+      'tab-alolans': {
+        templateUrl: 'templates/tab-alolans.html',
         controller: 'AlolanCtrl'
       }
     }
-  });
+  })
+  .state('tab.alolan-detail', {
+      url: '/alolans/:alolanId',
+      views: {
+        'tab-alolans': {
+          templateUrl: 'templates/alolan-detail.html',
+          controller: 'AlolanDetailCtrl'
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
