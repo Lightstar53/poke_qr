@@ -1,20 +1,20 @@
 <ion-view view-title="{{chat.name[0]}} {{chat.poke_num}}">
   <ion-content class="padding">
 
-        <button class="button button button-calm ">
+        <button class="button button-calm icon-right ion-information-circled">
           Types: 
         </button>
-        <button class="button capitalize button-clear button-positive" ng-repeat="n in [0,1]" ng-class="button-assertive">
+        <button class="button capitalize button-clear button-positive" ng-repeat="n in [0,1]" ng-click="openTypePopover(n,$event)" >
           {{chat.type[n]}}
         </button>
         
         <br>
 
-        <button class="button button button-royal">
-          Egg groups:
+        <button class="button button-royal icon-right ion-egg">
+          Egg Groups:
         </button>
 
-        <button class="button capitalize button-clear button-royal" ng-repeat="n in [0,1]" ng-class="button-assertive">
+        <button class="button capitalize button-clear button-royal" ng-repeat="n in [0,1]" ng-click="openEggPopover(n,$event)">
           {{chat.eggs[n]}}
         </button>
         
@@ -41,7 +41,7 @@
           <div class="item item-divider" >
             Able to breed with
           </div>
-          <img class = "padding" ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: '!Undiscovered' | filter: {egg1: chat.egg1, egg2: chat.egg2}" ng-click="alert('hi')">
+          <img class = "padding" ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: showEggs">
         </div>
       
         <div class="card">
