@@ -43,3 +43,47 @@ background-color:	#E8F8F5
 .capitalize {
 text-transform: capitalize;   
 }
+
+.popover{
+	width: 350px;
+	height: 400px;
+}
+.popover-backdrop{
+	background: rgba(175,236,247,0.8) !important;
+}
+p {
+    text-align: center;
+}
+.thumbnail img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.center {
+    text-align: center;
+}
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size:10px
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 5px;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+.text-positive{
+	color: green;
+}
+.text-negative{
+	color: red;
+}

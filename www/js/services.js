@@ -16,7 +16,14 @@ angular.module('starter.services', [])
   var egg_group1 = "Flying Flying Flying Field Field Field Water_1 Water_1 Water_2 Flying Flying Flying Field Field Bug Bug Bug Water_3 Water_4 Flying Bug Bug Field Field Water_2 Water_1 Water_2 Field Field Water_1 Water_2 Grass Grass Grass Grass Monster Monster Field Field Grass Grass Grass Grass Field Field Bug Bug Amorphous Amorphous Water_1 Undiscovered Undiscovered Mineral Field Monster Field Amorphous Water_2 Monster Mineral Dragon Dragon Dragon Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered Undiscovered".split(" ");
   var egg_group2 = "      Field Field Field            Fairy Fairy        Bug Bug     Dragon Dragon         Water_3 Water_3        Dragon Fairy   Dragon ".split(" ");
   var pre_evo =" Rowlet Dartrix  Litten Torracat  Popplio Brionne  Pipipek Trumbeak  Yungoos  Grubbin Charjabug  Crabrawler   Cutiefly  Rockruff   Mareanie  Mudbray  Dewpider  Fomantis  Morelull  Sandalit  Stufful  Bounsweet Steenee     Wimpod  Sandygast   Type: Null          Jangmo-o Hakamo-o      Cosmog Cosmoem Cosmoem".split(" ");
-  
+  var hp_stat ="68 78 78 45 65 95 50 60 80 35 55 80 48 88 47 57 77 47 97 75 40 60 45 75 45 50 50 70 100 38 68 40 70 40 60 48 68 70 120 42 52 72 51 90 100 25 75 55 85 55 95 95 60 65 60 65 55 68 78 70 45 55 75 70 70 70 70 43 43 137 137 109 107 71 83 97 59 223 97 80 90".split(" ");
+  var attack_stat ="55 75 107 65 85 115 54 69 74 75 85 120 70 110 62 82 70 82 132 70 45 55 65 115 20 53 63 100 125 40 70 55 105 35 45 44 64 75 125 30 40 120 52 60 120 35 125 55 75 60 95 95 60 115 78 98 90 105 60 131 55 75 110 115 85 130 75 29 29 137 113 53 139 137 89 101 181 101 107 95 125".split(" ");
+  var defense_stat ="55 75 75 40 50 90 54 69 74 30 50 75 30 60 45 95 90 57 77 70 40 60 40 65 20 62 152 70 100 52 92 35 90 55 80 40 60 50 80 38 48 98 90 80 90 40 140 80 110 130 95 95 100 65 135 63 80 70 85 100 65 90 125 85 75 115 115 31 131 107 89 47 139 37 71 103 131 53 101 115 80".split(" ");
+  var sp_a_stat ="50 70 100 60 80 80 66 91 126 30 40 75 30 55 55 55 145 42 62 98 55 95 30 55 25 43 53 45 55 40 50 50 80 65 90 71 111 45 55 30 40 50 82 90 40 20 60 70 100 30 95 95 60 75 91 40 50 70 135 86 45 65 100 95 130 85 95 29 29 113 137 127 53 137 173 107 59 97 127 130 90".split(" ");
+  var sp_d_stat ="50 70 100 40 50 90 56 81 116 30 50 75 30 60 45 75 75 47 67 70 40 70 40 65 25 52 142 55 85 72 132 35 90 75 100 40 60 50 60 38 48 98 110 110 60 30 90 45 75 130 95 95 100 95 85 73 105 70 91 90 45 70 105 75 115 95 130 31 131 89 107 131 53 37 71 101 31 53 89 115 90".split(" ");
+  var speed_stat ="42 52 70 70 90 60 40 50 60 65 75 60 45 45 46 36 43 63 43 93 84 124 60 112 40 45 35 45 35 27 42 35 45 15 30 77 117 50 60 32 62 72 100 60 80 80 40 15 35 5 59 95 60 65 36 96 96 92 36 40 45 65 85 130 95 75 85 37 37 97 97 103 79 151 83 61 109 43 79 65 125".split(" ");
+  var total_stat ="320 420 530 320 420 530 320 420 530 265 355 485 253 418 300 400 500 338 478 476 304 464 280 487 175 305 495 385 500 269 454 250 480 285 405 320 480 340 500 210 290 510 485 490 490 230 530 320 480 410 534 570 440 480 485 435 476 475 485 517 300 420 600 570 570 570 570 200 400 680 680 570 570 570 570 570 570 570 600 600 600".split(" ");
+
   var chats=[];
 
   for (var index=0; index<sm_pokemon_name.length; index++){
@@ -115,7 +122,14 @@ angular.module('starter.services', [])
       egg1: egg_group1[index],
       egg2: egg_group2[index],
       eggs: egg_groups,
-      code: 'img/qr_new/qr_new ('+idnum+').png'
+      code: 'img/qr_new/qr_new ('+idnum+').png',
+      hp: hp_stat[index],
+      attack: attack_stat[index],
+      defense: defense_stat[index],
+      sp_a: sp_a_stat[index],
+      sp_d: sp_d_stat[index],
+      speed: speed_stat[index],
+      total: total_stat[index]
     });
     idnum++;
     pokenum++;

@@ -1,3 +1,34 @@
+<ion-view view-title="Items in Sun and Moon">
+  <ion-content class="padding">
+  <label class="item item-input animated fadeInUp">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" placeholder="Search Items" ng-model="searchText">
+    </label>
+      <div class="card animated fadeInUp">
+      	<div class="item item-divider" >
+              <p>Pokeballs</p>
+       	</div>
+          <table id="table_id">
+          	<th> Picture</th>
+            <th> Name</th>
+            <th> Effect</th>
+            <th> Location</th>
+            <tr class ="animated fadeInUp" ng-repeat="x in pokeballs | filter:searchText ">
+            <td><img ng-src="{{x.icon}}"></td>
+              <td>{{ x.name }}</td>
+              <td>{{ x.effect }}</td>
+              <td>{{ x.location }}</td>
+            </tr>
+          </table>
+        </div>
 
-	<iframe src="http://www.serebii.net/sunmoon/items.shtml" style="border:none;" 
-	"></iframe>
+        <br>
+        <br>
+        <div class="bar bar-footer bar-balanced">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" placeholder="Search Items" ng-model="searchText">
+    </label>
+  </div>
+	</ion-content>
+</ion-view>
