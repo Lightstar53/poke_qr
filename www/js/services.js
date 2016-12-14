@@ -5,6 +5,7 @@ angular.module('starter.services', [])
   /*
   *  Only newest pokemon filter
   */ 
+  
   // National pokedex number
   var idnum = 1;
   var pokenum = 722;
@@ -41,10 +42,12 @@ angular.module('starter.services', [])
     l_poke_name.push(sm_pokemon_name[index]);
 
     var l_shiny_url = [];
-    l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'.png');
+    //l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'.png');
 
     var l_reg_url = [];
-    l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'.png');
+    //l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'.png');
+
+    pushSprites(name_url);
 
     if(sm_pokemon_name[index] == "Oricorio"){
       l_poke_name.push("Oricorio Baile");
@@ -85,6 +88,11 @@ angular.module('starter.services', [])
       l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'-i.png');
     }
 
+    function pushSprites(name_url)
+    {
+      l_shiny_url.push('http://play.pokemonshowdown.com/sprites/xyani-shiny/'+name_url+'.gif');
+      l_reg_url.push('http://play.pokemonshowdown.com/sprites/xyani/'+name_url+'.gif');
+    }
     var types =sm_types[index].slice(1,sm_types[index].length-1);
 
     var regex = new RegExp(',', 'g');
@@ -95,6 +103,7 @@ angular.module('starter.services', [])
     egg_groups.push(egg_group1[index]);
     if(egg_group2[index] != "")
       egg_groups.push(egg_group2[index]);
+
     chats.push({
       id: pokenum,
       name: l_poke_name,
@@ -128,6 +137,7 @@ angular.module('starter.services', [])
 
 })
 
+/*
 .factory('Alolan', function() {
 
   var alolans=[];
@@ -333,4 +343,4 @@ angular.module('starter.services', [])
     }
   };
 
-});
+});*/
