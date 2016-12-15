@@ -1,0 +1,21 @@
+<div class="padding modal transparent animated fadeInUp" on-swipe-down="closeModal()">
+
+  <div class="padding card animated fadeInUp ">
+    <p> Swipe Down to Exit 
+    <i class="icon ion-arrow-down-b"></i></p>
+      <div class="item item-divider" >
+        <p> Total:  {{chat.total}} </p>
+      </div>
+      <div class="padding item animated fadeInUp ">
+        <canvas id="bar" height="200" class="image-modal padding chart chart-bar" data="graph.data" labels="graph.labels" series='graph.series'></canvas>
+      </div>
+  </div>
+  <div class="padding card animated fadeInUp ">
+    <table id="table_id">
+      <tr ng-repeat="n in [0,1,2,3,4,5]">
+        <td>{{ graph.labels[n] }}</td>
+        <td class="text-positive">{{ graph.data[0][n]}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

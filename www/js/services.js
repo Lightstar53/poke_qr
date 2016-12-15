@@ -111,6 +111,72 @@ angular.module('starter.services', [])
     if(egg_group2[index] != "")
       egg_groups.push(egg_group2[index]);
 
+    // Copy data, parse into ints
+    var copy_data = [attack_stat[index],defense_stat[index],sp_a_stat[index],sp_d_stat[index],speed_stat[index]].map(function(item) {
+    return parseInt(item, 10);
+    });;
+  
+    // Keep track of indicies from highest to smallest numbers
+    var len = copy_data.length;
+    var indices = new Array(len);
+    for (var i = 0; i < len; ++i) indices[i] = i;
+    indices.sort(function (a, b) { return copy_data[a] < copy_data[b] ? -1 : copy_data[a] > copy_data[b] ? 1 : 0; });
+    indices.reverse();
+    console.log(indices);
+
+    var suggestions=[];
+    // Logic for calcuating nature
+
+    for(var i=0; i<4; i++)
+      pushSuggestions(i);
+
+    function pushSuggestions(n)
+    {
+      // Attack
+      if(indices[n] == 0){
+        if(attack_stat[index]-sp_a_stat[index]>6)
+          suggestions.push("Adamant");
+        if(attack_stat[index]-sp_a_stat[index]<6 || 
+          attack_stat[index]-speed_stat[index]>6)
+          suggestions.push("Brave");
+      }
+      // Defense
+      else if(indices[n] ==1){
+        if(defense_stat[index]-attack_stat[index]>6)
+          suggestions.push("Bold");
+        if(defense_stat[index]-sp_a_stat[index]>6)
+          suggestions.push("Impish");
+        if(attack_stat[index]-speed_stat[index]>6)
+          suggestions.push("Relaxed");
+      }
+      // Sp Attack
+      else if(indices[n] ==2){
+        if(sp_a_stat[index]-attack_stat[index]>6)
+          suggestions.push("Modest");
+        if(sp_a_stat[index]-attack_stat[index]<6 ||
+          sp_a_stat[index]-speed_stat[index]>6)
+          suggestions.push("Quiet");
+      }
+      // Sp Defense
+      else if(indices[n] ==3){
+        if(sp_d_stat[index]-attack_stat[index]>6)
+          suggestions.push("Calm");
+        if(sp_d_stat[index]-sp_a_stat[index]>6)
+          suggestions.push("Careful");
+        if(sp_d_stat[index]-speed_stat[index]>6)
+          suggestions.push("Sassy");
+      }
+      // Speed
+      else if(indices[n] ==4){
+        if(speed_stat[index]-sp_a_stat[index]>6)
+          suggestions.push("Jolly");
+        if(speed_stat[index]-attack_stat[index]>6)
+          suggestions.push("Timid");
+      }
+
+    }
+    
+
     chats.push({
       id: pokenum,
       name: l_poke_name,
@@ -129,10 +195,12 @@ angular.module('starter.services', [])
       sp_a: sp_a_stat[index],
       sp_d: sp_d_stat[index],
       speed: speed_stat[index],
-      total: total_stat[index]
+      total: total_stat[index],
+      suggestion: suggestions
     });
     idnum++;
     pokenum++;
+      
   }
 
   return {
@@ -149,7 +217,7 @@ angular.module('starter.services', [])
     }
   };
 
-})
+});
 
 /*
 .factory('Alolan', function() {

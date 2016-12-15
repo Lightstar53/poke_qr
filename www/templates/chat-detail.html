@@ -1,12 +1,11 @@
 <ion-view view-title="{{chat.name[0]}} {{chat.poke_num}}">
-  <ion-content class="padding">
-
+  <ion-content class="padding  ng-controller="ChatDetailCtrl">
         <div class="card center animated fadeInUp" >
           <div class="button-bar">
-            <button class="button button-calm button-small icon-right ion-information-circled">
+            <button class="button button-calm button-small icon-right ion-leaf" ng-click="showInfoTypes()">
               Types: 
             </button>
-            <button class="button button-royal button-small icon-right ion-egg" ng-click="openEggGroupPopover(n,$event)">
+            <button class="button button-royal button-small icon-right ion-egg" ng-click="showInfoEggGroups()">
               Egg Groups:
             </button>
           </div>
@@ -21,8 +20,10 @@
         </div>
 
         <div class="card center animated fadeInUp">
-          <div class="item item-divider" >
+        <div class="item item-divider" >
+            <button class="button capitalize button-clear button-block button-small button-dark icon-right ion-social-octocat" ng-click="showIcon()">
               <p>{{chat.name[0]}} </p>
+            </button>
             </div>
             <img class = "padding" ng-src="{{chat.reg_sprite[n]}}" ng-repeat="n in [0,1]" >
             <img class = "padding" ng-src="{{chat.shiny_sprite[n]}}" ng-repeat="n in [0,1]" >
@@ -31,29 +32,30 @@
 
         <div class="card animated fadeInUp">
           <div class="item item-divider" >
-                <p><button class="button capitalize button-clear button-block button-dark button-small icon-right ion-information-circled" ng-click="openNaturePopover($event)">
-            Base Stats
+                <p><button class="button capitalize button-clear button-block button-dark button-small icon-right ion-ios-pie" ng-click="showBarGraph()">
+            Base Stats | Total: {{chat.total}}
           </button></p>
           </div>
-          <canvas id="radar" height="150"class="padding chart chart-radar" data="graph.data" labels="graph.labels" series='graph.series' height="50"></canvas>
+          <canvas id="radar" height="150" class="padding chart chart-radar" data="graph.data" labels="graph.labels" series='graph.series' height="50"></canvas>
           <div class="item item-divider" >
-               <p> Total: {{chat.total}} </p>
+               <p><button class="button capitalize button-clear button-block button-dark button-small icon-right ion-information-circled" ng-click="showNatures()">
+             Suggested natures: {{chat.suggestion[0]}}, {{chat.suggestion[1]}}, {{chat.suggestion[2]}}
+          </button></p>
           </div>
         </div>
 
         <div class="card center animated fadeInUp">
           <div class="item item-divider" >
-            <p> Able to Breed with </p>
+            <p> Able to Breed with <i class="right-image icon ion-medkit"></i></p>
           </div>
           <img class = "padding" ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: showEggs">
         </div>
       
         <div class="card thumbnail animated fadeInUp">
           <div class="item item-divider">
-            <p> QR Code </p>
+            <p> QR Code <i class="right-image icon ion-qr-scanner"></i></p>
           </div>
           <img ng-src="{{chat.code}}" >
         </div>
-
   </ion-content>
 </ion-view>

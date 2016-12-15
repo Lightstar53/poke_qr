@@ -7,7 +7,7 @@
     </label>
     <ion-list>
       <ion-item class="item-icon-right animated fadeInUp" ng-repeat="chat in chats | filter:searchText | filter:showPoke" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-          <img ng-src="{{chat.icon}}" height = "60" class = "left-image">
+          <img ng-src="{{chat.icon}}" height = "60" class = "left-image transparent-white ">
           <i class="icon ion-information-circled icon-accessory"></i>
           <p style= "text-align: center">[{{chat.poke_num}}] {{chat.name[0]}} </p>
       </ion-item>
