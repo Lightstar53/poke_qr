@@ -7,7 +7,6 @@ angular.module('starter.controllers', ['chart.js'])
 
 .controller('ChatsCtrl', function($scope, Chats, $ionicLoading) {
   $scope.chats = Chats.all();
-
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicLoading, $ionicPopover, $ionicPopup,  $ionicModal) {
@@ -89,10 +88,15 @@ angular.module('starter.controllers', ['chart.js'])
    $scope.animation='slide-in-up';
 
    $scope.openTypePopover = function(n,$event) {
-      if(n==0)
-        $scope.type1_popover.show($event);
-      else
-        $scope.type2_popover.show($event);
+
+      if(n==0){
+        if($scope.chat.type[0])
+          $scope.type1_popover.show($event);
+      }
+      else{
+        if($scope.chat.type[1])
+          $scope.type2_popover.show($event);
+      }
    };
 
    $scope.closeTypePopover = function($event) {
@@ -101,10 +105,14 @@ angular.module('starter.controllers', ['chart.js'])
    };
 
    $scope.openEggPopover = function(n,$event) {
-      if(n==0)
-        $scope.egg1_popover.show($event);
-      else
-        $scope.egg2_popover.show($event);
+      if(n==0){
+        if($scope.chat.egg1)
+          $scope.egg1_popover.show($event);
+      }
+      else{
+        if($scope.chat.egg2)
+          $scope.egg2_popover.show($event);
+      }
    };
 
    $scope.closeTypePopover = function($event) {

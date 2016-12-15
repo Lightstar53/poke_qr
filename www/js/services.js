@@ -23,7 +23,14 @@ angular.module('starter.services', [])
   var sp_d_stat ="50 70 100 40 50 90 56 81 116 30 50 75 30 60 45 75 75 47 67 70 40 70 40 65 25 52 142 55 85 72 132 35 90 75 100 40 60 50 60 38 48 98 110 110 60 30 90 45 75 130 95 95 100 95 85 73 105 70 91 90 45 70 105 75 115 95 130 31 131 89 107 131 53 37 71 101 31 53 89 115 90".split(" ");
   var speed_stat ="42 52 70 70 90 60 40 50 60 65 75 60 45 45 46 36 43 63 43 93 84 124 60 112 40 45 35 45 35 27 42 35 45 15 30 77 117 50 60 32 62 72 100 60 80 80 40 15 35 5 59 95 60 65 36 96 96 92 36 40 45 65 85 130 95 75 85 37 37 97 97 103 79 151 83 61 109 43 79 65 125".split(" ");
   var total_stat ="320 420 530 320 420 530 320 420 530 265 355 485 253 418 300 400 500 338 478 476 304 464 280 487 175 305 495 385 500 269 454 250 480 285 405 320 480 340 500 210 290 510 485 490 490 230 530 320 480 410 534 570 440 480 485 435 476 475 485 517 300 420 600 570 570 570 570 200 400 680 680 570 570 570 570 570 570 570 600 600 600".split(" ");
+  var male_perc ="87.50% 87.50% 87.50% 87.50% 87.50% 87.50% 87.50% 87.50% 87.50% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 25.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 87.50% 0.00% 50.00% 50.00% 0.00% 0.00% 0.00% 25.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00%    50.00% 50.00% 50.00% 50.00% 50.00% 50.00%  50.00% 50.00% 50.00%".split(" ");
+  var female_perc="12.50% 12.50% 12.50% 12.50% 12.50% 12.50% 12.50% 12.50% 12.50% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 75.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 12.50% 100.00% 50.00% 50.00% 100.00% 100.00% 100.00% 75.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00% 50.00%    50.00% 50.00% 50.00% 50.00% 50.00% 50.00%  50.00% 50.00% 50.00%".split(" ");
+  var ability1="Overgrow' 'Overgrow' 'Overgrow' 'Blaze' 'Blaze' 'Blaze' 'Torrent' 'Torrent' 'Torrent' 'Keen Eye' 'Keen Eye' 'Keen Eye' 'Stakeout' 'Stakeout' 'Swarm' 'Battery' 'Levitate' 'Hyper Cutter' 'Hyper Cutter' 'Dancer' 'Honey Gather' 'Honey Gather' 'Keen Eye' 'Keen Eye' 'Schooling' 'Merciless' 'Merciless' 'Own Tempo' 'Own Tempo' 'Water Bubble' 'Water Bubble' 'Leaf Guard' 'Leaf Guard' 'Illuminate' 'Illuminate' 'Corrosion' 'Corrosion' 'Fluffy' 'Fluffy' 'Leaf Guard' 'Leaf Guard' 'Leaf Guard' 'Flower Veil' 'Inner Focus' 'Receiver' 'Wimp Out' 'Emergency Exit' 'Water Compaction' 'Water Compaction' 'Innards Out' 'Battle Armor' 'RKS System' 'Shields Down' 'Comatose' 'Shell Armor' 'Iron Barbs' 'Disguise' 'Dazzling' 'Berserk' 'Steelworker' 'Bulletproof' 'Bulletproof' 'Bulletproof' 'Electric Surge' 'Psychic Surge' 'Grassy Surge' 'Misty Surge' 'Unaware' 'Sturdy' 'Full Metal Body' 'Shadow Shield' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Prism Armor' 'Soul-Heart' 'Technician".split("' '");
+  var ability2="Overgrow' 'Overgrow' 'Overgrow' 'Blaze' 'Blaze' 'Blaze' 'Torrent' 'Torrent' 'Torrent' 'Skill Link' 'Skill Link' 'Skill Link' 'Strong Jaw' 'Strong Jaw' 'Swarm' 'Battery' 'Levitate' 'Iron Fist' 'Iron Fist' 'Dancer' 'Shield Dust' 'Shield Dust' 'Vital spirit' 'Sand Rush' 'Schooling' 'Limber' 'Limber' 'Stamina' 'Stamina' 'Water Bubble' 'Water Bubble' 'Leaf Guard' 'Leaf Guard' 'Effect Spore' 'Effect Spore' 'Corrosion' 'Corrosion' 'Klutz' 'Klutz' 'Oblivious' 'Oblivious' 'Queenly Majesty' 'Triage' 'Telepahty' 'Receiver' 'Wimp Out' 'Emergency Exit' 'Water Compaction' 'Water Compaction' 'Innards Out' 'Battle Armor' 'RKS System' 'Shields Down' 'Comatose' 'Shell Armor' 'Lightning Rod' 'Disguise' 'Strong Jaw' 'Sap Sipper' 'Steelworker' 'Soundproof' 'Soundproof' 'Soundproof' 'Electric Surge' 'Psychic Surge' 'Grassy Surge' 'Misty Surge' 'Unaware' 'Sturdy' 'Full Metal Body' 'Shadow Shield' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Prism Armor' 'Soul-Heart' 'Technician".split("' '");
+  var ability3="Long Reach' 'Long Reach' 'Long Reach' 'Intimidate' 'Intimidate' 'Intimidate' 'Liquid Voice' 'Liquid Voice' 'Liquid Voice' 'Pickup' 'Pickup' 'Sheer Force' 'Adaptability' 'Adaptability' 'Swarm' 'Battery' 'Levitate' 'Anger Point' 'Anger Point' 'Dancer' 'Sweet Veil' 'Sweet Veil' 'Steadfast' 'Steadfast' 'Schooling' 'Regenerator' 'Regenerator' 'Inner Focus' 'Inner Focus' 'Water Absorb' 'Water Absorb' 'Contrary' 'Contrary' 'Rain Dish' 'Rain Dish' 'Oblivious' 'Oblivious' 'Cute Charm' 'Unnerve' 'Sweet Veil' 'Sweet Veil' 'Sweet Veil' 'Natural Cure' 'Symbiosis' 'Defiant' 'Wimp Out' 'Emergency Exit' 'Sand Veil' 'Sand Veil' 'Unaware' 'Battle Armor' 'RKS System' 'Shields Down' 'Comatose' 'Shell Armor' 'Sturdy' 'Disguise' 'Wonder Skin' 'Cloud Nine' 'Steelworker' 'Overcoat' 'Overcoat' 'Overcoat' 'Telepathy' 'Telepathy' 'Telepathy' 'Telepathy' 'Unaware' 'Sturdy' 'Full Metal Body' 'Shadow Shield' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Prism Armor' 'Soul-Heart' 'Technician".split("' '");
 
+
+  alert(ability3[0]);
   var chats=[];
 
   for (var index=0; index<sm_pokemon_name.length; index++){
@@ -54,47 +61,65 @@ angular.module('starter.services', [])
     var l_reg_url = [];
     //l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'.png');
 
-    pushSprites(name_url);
-
     if(sm_pokemon_name[index] == "Oricorio"){
+
       l_poke_name.push("Oricorio Baile");
       l_poke_name.push("Oricorio Pom-Pom");
       l_poke_name.push("Oricorio Pa'u");
       l_poke_name.push("Oricorio Sensu");
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-p.png');
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-pau.png');
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-s.png');
-      l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'-p.png');
-      l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'-pau.png');
-      l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'-s.png');
+      name_url = "oricorio";
+      pushSprites(name_url);
+      name_url = "oricorio-pompom";
+      pushSprites(name_url);
+      name_url = "oricorio-pau";
+      pushSprites(name_url);
+      name_url = "oricorio-sensu";
     }
     else if(sm_pokemon_name[index] == "Lycanroc")
     {
       l_poke_name.push("Lycanroc Midday");
       l_poke_name.push("Lycanroc MidNight");
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-m.png');
-      l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'-m.png');
+      name_url = "lycanroc";
+      pushSprites(name_url);
+      name_url = "lycanroc-midnight";
     }
     else if(sm_pokemon_name[index] == "Wishiwashi")
     {
       l_poke_name.push("Wishiwashi Solo");
       l_poke_name.push("Wishiwashi School");
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-s.png');
-      l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'-s.png');
+      name_url = "wishiwashi";
+      pushSprites(name_url);
+      name_url = "wishiwashi-school";
     }
     else if(sm_pokemon_name[index] == "Minior")
     {
       l_poke_name.push("Minior Core");
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-b.png');
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-g.png');
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-i.png');
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-o.png');
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-r.png');
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-v.png');
-      l_reg_url.push('http://www.serebii.net/sunmoon/pokemon/'+pokenum+'-y.png');
-      l_shiny_url.push('http://www.serebii.net/Shiny/SM/'+pokenum+'-i.png');
+      name_url = "minior-meteor";
+      pushSprites(name_url);
+      name_url = "minior";
     }
+    else if(sm_pokemon_name[index].includes("Type")){
+      name_url = "typenull";
+    }
+    else if(sm_pokemon_name[index].includes("Mars")){
+      name_url = "marshadow";
+    }
+    else if(name_url.includes("tapu")){
+      name_url = name_url.replace(name_url.substring(4,5),"");
+    }
+    else if(name_url == "jangmo-o"){
+      name_url = "jangmoo";
+    }
+    else if(name_url == "kommo-o"){
+      name_url = "kommoo";
+    }
+    else if(name_url == "hakamo-o"){
+      name_url = "hakamoo";
+    }
+    else if(name_url == "tmp/790")
+      name_url = "cosmoem";
 
+    pushSprites(name_url);
     function pushSprites(name_url)
     {
       l_shiny_url.push('http://play.pokemonshowdown.com/sprites/xyani-shiny/'+name_url+'.gif');
@@ -112,9 +137,7 @@ angular.module('starter.services', [])
       egg_groups.push(egg_group2[index]);
 
     // Copy data, parse into ints
-    var copy_data = [attack_stat[index],defense_stat[index],sp_a_stat[index],sp_d_stat[index],speed_stat[index]].map(function(item) {
-    return parseInt(item, 10);
-    });;
+    var copy_data = [attack_stat[index],defense_stat[index],sp_a_stat[index],sp_d_stat[index],speed_stat[index]].map(function(item) {return parseInt(item, 10);});
   
     // Keep track of indicies from highest to smallest numbers
     var len = copy_data.length;
@@ -127,6 +150,7 @@ angular.module('starter.services', [])
     var suggestions=[];
     // Logic for calcuating nature
 
+    // Pushing suggestions
     for(var i=0; i<4; i++)
       pushSuggestions(i);
 
@@ -173,7 +197,6 @@ angular.module('starter.services', [])
         if(speed_stat[index]-attack_stat[index]>6)
           suggestions.push("Timid");
       }
-
     }
     
 
@@ -196,13 +219,19 @@ angular.module('starter.services', [])
       sp_d: sp_d_stat[index],
       speed: speed_stat[index],
       total: total_stat[index],
-      suggestion: suggestions
+      suggestion: suggestions,
+      male: male_perc[index],
+      female: female_perc[index],
+      abil1: ability1[index],
+      abil2: ability2[index],
+      abil3: ability3[index]
     });
     idnum++;
     pokenum++;
       
   }
 
+  var items =[];
   return {
     all: function() {
       return chats;
