@@ -3,21 +3,6 @@
 angular.module('starter.controllers', ['chart.js'])
 
 .controller('DashCtrl', function($scope, $ionicSlideBoxDelegate) {
-  scope.aImages = [{
-        'src' : 'img/pokebacground.jpg', 
-        'msg' : 'Swipe me to the left. Tap/click to close'
-      }, {
-        'src' : 'iconbackground.jpg', 
-        'msg' : ''
-      }, { 
-        'src' : 'http://ionicframework.com/img/homepage/phones-weather-demo@2x.png', 
-        'msg' : ''
-    }];
-
-    $scope.options = {
-  loop: false,
-  effect: 'fade',
-  speed: 500,
 }
 
 $scope.$on("$ionicSlides.sliderInitialized", function(event, data){

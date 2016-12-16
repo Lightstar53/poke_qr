@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.pokeqr732857" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>poke_qr</name>
-  <description>
-        An Ionic Framework and Cordova project.
+  <description>&#xD;
+        An Ionic Framework and Cordova project.&#xD;
     </description>
-  <author email="you@example.com" href="http://example.com/">
-      Your Name Here
+  <author email="you@example.com" href="http://example.com/">&#xD;
+      Your Name Here&#xD;
     </author>
-  <content src="http://172.17.60.73:8100" original-src="index.html"/>
+  <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
@@ -41,4 +41,5 @@
     <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
   </platform>
   <allow-navigation href="http://172.17.60.73:8100"/>
+  <allow-navigation href="http://192.168.0.108:8100"/>
 </widget>
