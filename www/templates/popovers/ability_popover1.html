@@ -11,7 +11,7 @@
           <th> Ability Name</th>
           <th> Description</th>
           <th> Pokemon with this Ability</th>
-          <tr ng-repeat="x in abilities | filter: chat.abilities[0]">
+          <tr ng-repeat="x in abilities | filter: chat.abilities[0] : true |filter:search:strict">
             <td class="text-positive">{{ x.name }}</td>
             <td>{{ x.description }}</td>
             <td><p ng-repeat="ability in x.poke_with_abil">{{ability}} </p></td>

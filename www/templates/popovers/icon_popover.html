@@ -1,10 +1,10 @@
 
-<div class="modal image-modal transparent animated fadeInUp" on-swipe-left="closeModal()">
-    <ion-slide>
-        <div class="padding card ">
-            <p> Swipe Left to Exit 
+<div class="modal transparent animated fadeInUp" on-swipe-left="closeModal()">
+    <ion-content>
+        <div class="padding card center">
+            <p> {{chat.name[0]}} 
             <i class="icon ion-arrow-left-b"></i></p>
-            <img ng-src={{chat.icon}} class="fullscreen-image"/>
+            <img ng-src={{chat.icon}} class="padding"/>
         </div>
-    </ion-slide>
+    </ion-content>
 </div>
