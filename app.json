@@ -1,0 +1,7 @@
+{
+    "name": "Nhan's PokeApp",
+    "description": "A simple Ionic app for Heroku",
+    "repository": "https://github.com/Lightstar53/poke_qr",
+    "logo": "http://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png",
+    "keywords": ["ionic", "lightstar53", "pokemon", "poke"]
+}
