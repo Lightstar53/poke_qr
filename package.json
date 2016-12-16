@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "poke_qr: An Ionic project",
   "repository": "https://github.com/Lightstar53/poke_qr",
-  "keywords": ["ionic", "lightstar53", "poke_qr"]
+  "keywords": ["ionic", "lightstar53", "poke_qr"],
   "dependencies": {
     "express": "^4.14.0",
     "gulp": "^3.5.6",
@@ -27,6 +27,6 @@
   ],
   "cordovaPlatforms": [],
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   }
 }
