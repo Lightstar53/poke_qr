@@ -1,75 +1,105 @@
-<ion-view view-title="{{chat.name[0]}} {{chat.poke_num}}">
-  <ion-content class="padding  ng-controller="ChatDetailCtrl">
-        <div class="card center animated fadeInUp" >
-          <div class="button-bar">
-            <button class="button button-calm button-small icon-right ion-leaf" ng-click="showInfoTypes()">
-              Types: 
-            </button>
-            <button class="button button-balanced button-small icon-right ion-egg" ng-click="showInfoEggGroups()">
-              Egg Groups:
-            </button>
-          </div>
-          <div class="button-bar ">
-          <button class="button capitalize button-clear button-small button-positive" ng-repeat="n in [0,1]" ng-click="openTypePopover(n,$event)" >
-            {{chat.type[n]}}
-          </button>
-          <button class="button capitalize button-clear button-small button-balanced" ng-repeat="n in [0,1]" ng-click="openEggPopover(n,$event)">
-            {{chat.eggs[n]}}
-          </button>
-          </div>
-        </div>
+<!-- Header -->
+<div class="bar bar-header item-input-inset">
+  <p class= " center animated fadeInUp"> {{chat.name[0]}} {{chat.poke_num}}</p>
+</div>
 
-        <div class="card center animated fadeInUp">
-        <div class="item item-divider" >
-            <button class="button capitalize button-clear button-block button-small button-dark icon-right ion-social-octocat" ng-click="showIcon()">
-              <p>{{chat.name[0]}} </p>
-            </button>
-            </div>
+<!-- Content -->
+<ion-content class="padding" ng-controller="ChatDetailCtrl">
+<br>
 
-            <div class="button-bar">
-            <button class="button button-positive button-small ion-male">
-              Male: {{chat.male}}
-            </button>
-            <button class="button button-royal button-small ion-female">
-              Female: {{chat.female}}
-            </button>
-            </div>
-              <img class = "padding" ng-src="{{sprite}}" ng-repeat="sprite in chat.reg_sprite" >
-              <img class = "padding" ng-src="{{sprite}}" ng-repeat="sprite in chat.shiny_sprite" >
-              <div class="item item-divider" >
-           Abilities {{chat.abil1}} {{chat.abil2}} {{chat.abil3}}
-            </div>
-            </div>
+  <div class="card center animated fadeInUp" >
+    <div class="button-bar">
+      <button class="button button-positive button-small icon-right ion-leaf" ng-click="showTypeCalc()">
+        Types: 
+      </button>
+      <button class="button button button-balanced button-small icon-right ion-egg" ng-click="showInfoEggGroups()">
+        Egg Groups:
+      </button>
+    </div>
+    <div class="button-bar ">
+      <div class="col col-50">
+        <button class="button capitalize button-clear button-small button-positive" ng-repeat="n in [0,1]" ng-click="showTypeGroup(n)">
+          {{chat.type[n]}}
+        </button>
+      </div>
+      <div class="col col-50">
+      <button class="button capitalize button-clear button-small button-balanced" ng-click="showEggGroup(0)">
+        {{chat.eggs[0]}}
+      </button>
+      <button class="button capitalize button-clear button-small button-balanced" ng-click="showEggGroup(1)" ng-hide="!chat.eggs[1]">
+        {{chat.eggs[1]}}
+      </button>
+      </div>
+    </div>
+  </div>
 
-          </div>
-        </div>
 
-        <div class="card animated fadeInUp">
-          <div class="item item-divider" >
-                <p><button class="button capitalize button-clear button-block button-dark button-small icon-right ion-ios-pie" ng-click="showBarGraph()">
-            Base Stats | Total: {{chat.total}}
-          </button></p>
-          </div>
-          <canvas id="radar" height="150" class="padding chart chart-radar" data="graph.data" labels="graph.labels" series='graph.series' height="50"></canvas>
-          <div class="item item-divider" >
-               <p><button class="button capitalize button-clear button-block button-dark button-small icon-right ion-information-circled" ng-click="showNatures()">
-             Suggested natures: {{chat.suggestion[0]}}, {{chat.suggestion[1]}}, {{chat.suggestion[2]}}
-          </button></p>
-          </div>
-        </div>
+  <div class="card center animated fadeInUp">
 
-        <div class="card center animated fadeInUp">
-          <div class="item item-divider" >
-            <p> Able to Breed with <i class="right-image icon ion-medkit"></i></p>
-          </div>
-          <img class = "padding" ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: showEggs">
-        </div>
-      
-        <div class="card thumbnail animated fadeInUp">
-          <div class="item item-divider">
-            <p> QR Code <i class="right-image icon ion-qr-scanner"></i></p>
-          </div>
-          <img ng-src="{{chat.code}}" >
-        </div>
-  </ion-content>
-</ion-view>
+    <div class="item item-divider" >
+        <button class="button capitalize button-clear button-full button-small button-dark icon-right ion-social-octocat" ng-click="showIcon()">
+            <p>{{chat.name[0]}} </p>
+        </button>
+    </div>
+
+    <div class="button-bar ">
+      <div class="col col-{{chat.male_int}}"><button class="button button-full button-calm button-small ion-male" ng-hide="chat.male_int==0 || (!chat.male && !chat.female)" >
+      {{chat.male}}
+      </button></div>
+
+      <div class="col col"><button class="button button-full pinkButton button-small ion-female" ng-hide="chat.male_int==100 || (!chat.male && !chat.female) || chat.male_int==0">
+        {{chat.female}}
+      </button></div>
+    </div>
+    <button class="button button-full pinkButton button-small ion-female" ng-show="chat.male_int==0">
+       {{chat.female}}
+      </button>
+    <button class="button button-full greyButton button-small ion-transgender" ng-show="!chat.male && !chat.female">
+        Genderless
+      </button>
+
+    <img class = "padding" ng-src="{{sprite}}" ng-repeat="sprite in chat.reg_sprite" >
+    <img class = "padding" ng-src="{{sprite}}" ng-repeat="sprite in chat.shiny_sprite" >
+
+    <div class="item item-divider" >
+      <div class="button-bar ">
+        <button class= "button button-small button-dark button-clear icon-right ion-ios-help-outline" ng-click="showAbilities()">Abilities: </button>
+      </div>
+      <div class="button-bar ">
+      <button class= "button button-small button icon-right ion-ios-information-outline" ng-repeat="n in chat.abilities track by $index" ng-click="showAbility($index)" >{{chat.abilities[$index]}} </button>
+        <button class= "padding button button-small button-dark icon-right ion-ios-information-outline" ng-click="showAbility(3)">{{chat.abil3}} </button>
+    </div>
+    </div>
+  </div>
+
+  <div class="card animated fadeInUp">
+
+    <div class="item item-divider" >
+          <p><button class="button capitalize button-clear button-block button-dark button-small icon-right ion-ios-pie" ng-click="showBarGraph()">
+      Base Stats | Total: {{chat.total}}
+    </button></p>
+    </div>
+
+    <canvas id="radar" height="150" class="padding chart chart-radar" data="graph.data" labels="graph.labels" series='graph.series' height="50"></canvas>
+
+    <div class="item item-divider" >
+      <p><button class="button capitalize button-clear button-block button-dark button-small icon-right ion-information-circled" ng-click="showNatures()">
+       Suggested natures: {{chat.suggestion[0]}}, {{chat.suggestion[1]}}, {{chat.suggestion[2]}}
+      </button></p>
+    </div>
+  </div>
+
+  <div class="card center animated fadeInUp">
+    <div class="item item-divider" >
+      <p> Able to Breed with <i class="right-image icon ion-medkit"></i></p>
+    </div>
+    <img class = "padding" ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: showEggs">
+  </div>
+
+  <div class="card thumbnail animated fadeInUp">
+    <div class="item item-divider">
+      <p> QR Code <i class="right-image icon ion-qr-scanner"></i></p>
+    </div>
+    <img ng-src="{{chat.code}}" >
+  </div>
+</ion-content>

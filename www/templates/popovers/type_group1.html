@@ -1,0 +1,12 @@
+<div class="modal transparent animated fadeInUp" on-swipe-left="closeModal()">
+	<div class="padding card ">
+		<p> Swipe Left to Exit 
+		<i class="icon ion-arrow-left-b"></i></p>
+	</div>
+	<div class="padding card ">
+		<div class="item item-divider" >
+			<p class = "capitalize center title">{{chat.type[0]}} types</p>
+		</div>
+        <img class = "padding" ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: showType1">
+    </div>
+</div>

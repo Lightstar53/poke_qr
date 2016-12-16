@@ -1,22 +1,27 @@
 
-      <div class="modal transparent card animated fadeInUp" on-swipe-down="closeModal()">
-      <label class="item item-input animated fadeInUp">
-      <i class="icon ion-search placeholder-icon"></i>
-      <input type="search" placeholder="Search Pokemon/ID or Swipe Down to Exit" ng-model="searchText">
-    </label>
-       <ion-scroll>
-       <div class="card center animated fadeInUp">
-        <i class="icon ion-arrow-down-b"></i>
-          <table id="table_id">
-            <th> Nature</th>
-            <th> Increases</th>
-            <th> Decreases</th>
-            <tr ng-repeat="x in natures | filter:searchText">
-              <td>{{ x.name }}</td>
-              <td class="text-positive">{{ x.increases }}</td>
-              <td class="text-negative">{{ x.decreases }}</td>
-            </tr>
-          </table>
-          </div>
-           </ion-scroll>
-        </div>
+<div class="modal transparent animated fadeInUp" on-swipe-left="closeModal()">
+  <label class="item item-input animated fadeInUp">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="search" placeholder="Search for Nature or Swipe Left to Exit" ng-model="searchNatures">
+  </label>
+
+   <ion-content><br><br>
+    <div class="card center animated fadeInUp">
+    All Natures
+      <i class="icon ion-arrow-left-b"></i>
+
+    </div>
+        <table id="table_id">
+          <th> Nature</th>
+          <th> Increases</th>
+          <th> Decreases</th>
+          <tr ng-repeat="x in natures | filter:searchNatures">
+            <td>{{ x.name }}</td>
+            <td class="text-positive">{{ x.increases }}</td>
+            <td class="text-negative">{{ x.decreases }}</td>
+          </tr>
+        </table>
+      
+  </ion-content>
+  
+  </div>

@@ -43,14 +43,6 @@ background-color:	#E8F8F5
 .capitalize {
 text-transform: capitalize;   
 }
-
-.popover{
-	width: 350px;
-	height: 400px;
-}
-.popover-backdrop{
-	background: rgba(255,255,255,0.8) !important;
-}
 p {
     text-align: center;
 }
@@ -64,7 +56,7 @@ p {
 table, td, th {    
     border: 1px solid #ddd;
     text-align: left;
-    font-size:10px
+    font-size:12px
 }
 
 table {
@@ -78,6 +70,7 @@ th, td {
 th {
     background-color: #4CAF50;
     color: white;
+    font-size:14px
 }
 tr:nth-child(even){background-color: #f2f2f2}
 
@@ -124,4 +117,51 @@ background: rgba(255,255,255,0.8) !important;
     max-height: 420px;
     overflow-y: auto;
     position: absolute;
+
+    border-radius: 15px;
 }
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 1px 1px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.pinkButton {
+    background-color: #F778A1;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+.greyButton{
+    background-color:    #837E7C;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+.separator {
+      content: '';
+      display: inline-block;
+      background: white;
+      margin: 0px 2px;
+      height: 23px;
+      width: 1px;
+      vertical-align: top;
+    }

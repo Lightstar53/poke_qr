@@ -81,7 +81,8 @@ if (!ionic.Platform.isIOS()) {
         controller: 'ItemCtrl'
       }
     }
-  })
+  });
+  /*
   .state('tab.alolans', {
     url: '/alolans',
     views: {
@@ -117,7 +118,7 @@ if (!ionic.Platform.isIOS()) {
           controller: 'NationalDetailCtrl'
         }
       }
-    });
+    });*/
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/chats');

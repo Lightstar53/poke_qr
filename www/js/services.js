@@ -29,8 +29,6 @@ angular.module('starter.services', [])
   var ability2="Overgrow' 'Overgrow' 'Overgrow' 'Blaze' 'Blaze' 'Blaze' 'Torrent' 'Torrent' 'Torrent' 'Skill Link' 'Skill Link' 'Skill Link' 'Strong Jaw' 'Strong Jaw' 'Swarm' 'Battery' 'Levitate' 'Iron Fist' 'Iron Fist' 'Dancer' 'Shield Dust' 'Shield Dust' 'Vital spirit' 'Sand Rush' 'Schooling' 'Limber' 'Limber' 'Stamina' 'Stamina' 'Water Bubble' 'Water Bubble' 'Leaf Guard' 'Leaf Guard' 'Effect Spore' 'Effect Spore' 'Corrosion' 'Corrosion' 'Klutz' 'Klutz' 'Oblivious' 'Oblivious' 'Queenly Majesty' 'Triage' 'Telepahty' 'Receiver' 'Wimp Out' 'Emergency Exit' 'Water Compaction' 'Water Compaction' 'Innards Out' 'Battle Armor' 'RKS System' 'Shields Down' 'Comatose' 'Shell Armor' 'Lightning Rod' 'Disguise' 'Strong Jaw' 'Sap Sipper' 'Steelworker' 'Soundproof' 'Soundproof' 'Soundproof' 'Electric Surge' 'Psychic Surge' 'Grassy Surge' 'Misty Surge' 'Unaware' 'Sturdy' 'Full Metal Body' 'Shadow Shield' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Prism Armor' 'Soul-Heart' 'Technician".split("' '");
   var ability3="Long Reach' 'Long Reach' 'Long Reach' 'Intimidate' 'Intimidate' 'Intimidate' 'Liquid Voice' 'Liquid Voice' 'Liquid Voice' 'Pickup' 'Pickup' 'Sheer Force' 'Adaptability' 'Adaptability' 'Swarm' 'Battery' 'Levitate' 'Anger Point' 'Anger Point' 'Dancer' 'Sweet Veil' 'Sweet Veil' 'Steadfast' 'Steadfast' 'Schooling' 'Regenerator' 'Regenerator' 'Inner Focus' 'Inner Focus' 'Water Absorb' 'Water Absorb' 'Contrary' 'Contrary' 'Rain Dish' 'Rain Dish' 'Oblivious' 'Oblivious' 'Cute Charm' 'Unnerve' 'Sweet Veil' 'Sweet Veil' 'Sweet Veil' 'Natural Cure' 'Symbiosis' 'Defiant' 'Wimp Out' 'Emergency Exit' 'Sand Veil' 'Sand Veil' 'Unaware' 'Battle Armor' 'RKS System' 'Shields Down' 'Comatose' 'Shell Armor' 'Sturdy' 'Disguise' 'Wonder Skin' 'Cloud Nine' 'Steelworker' 'Overcoat' 'Overcoat' 'Overcoat' 'Telepathy' 'Telepathy' 'Telepathy' 'Telepathy' 'Unaware' 'Sturdy' 'Full Metal Body' 'Shadow Shield' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Beast Boost' 'Prism Armor' 'Soul-Heart' 'Technician".split("' '");
 
-
-  alert(ability3[0]);
   var chats=[];
 
   for (var index=0; index<sm_pokemon_name.length; index++){
@@ -145,7 +143,7 @@ angular.module('starter.services', [])
     for (var i = 0; i < len; ++i) indices[i] = i;
     indices.sort(function (a, b) { return copy_data[a] < copy_data[b] ? -1 : copy_data[a] > copy_data[b] ? 1 : 0; });
     indices.reverse();
-    console.log(indices);
+    //console.log(indices);
 
     var suggestions=[];
     // Logic for calcuating nature
@@ -199,6 +197,109 @@ angular.module('starter.services', [])
       }
     }
     
+    var abilities=[];
+    abilities.push(ability1[index]);
+    if(ability1[index] != ability2[index])
+      abilities.push(ability2[index]);
+
+    var temp_m= parseInt(male_perc[index]);
+    if(temp_m <20 && temp_m>0)
+      temp_m = 20;
+    else if(temp_m <80 && temp_m >40)
+      temp_m = 50;
+    else if(temp_m >80 && temp_m<100)
+      temp_m =80;
+    else if(temp_m == 100)
+      temp_m = 100;
+    else if(temp_m == 0)
+      temp_m = 0;
+
+        var types_l = new Array(
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1, 1],// Normal
+[1, 0.5, 0.5, 1, 2, 2, 1, 1, 1, 1, 1, 2, 0.5, 1, 0.5, 1, 2, 1, 1],// Fire
+[1, 2, 0.5, 1, 0.5, 1, 1, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 1, 1, 1],// Water
+[1, 1, 2, 0.5, 0.5, 1, 1, 1, 0, 2, 1, 1, 1, 1, 0.5, 1, 1, 1, 1],// Electric
+[1, 0.5, 2, 1, 0.5, 1, 1, 0.5, 2, 0.5, 1, 0.5, 2, 1, 0.5, 1, 0.5, 1, 1],// Grass
+[1, 0.5, 0.5, 1, 2, 0.5, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 0.5, 1, 1],// Ice
+[2, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 0.5, 2, 0, 1, 2, 2, 0.5, 1],// Fighting
+[1, 1, 1, 1, 2, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 0, 2, 1],// Poison
+[1, 2, 1, 2, 0.5, 1, 1, 2, 1, 0, 1, 0.5, 2, 1, 1, 1, 2, 1, 1],// Ground
+[1, 1, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 0.5, 1, 1],// Flying
+[1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 0.5, 1, 1, 1, 1, 0, 0.5, 1, 1],// Psychic
+[1, 0.5, 1, 1, 2, 1, 0.5, 0.5, 1, 0.5, 2, 1, 1, 0.5, 1, 2, 0.5, 0.5, 1],// Bug
+[1, 2, 1, 1, 1, 2, 0.5, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 1],// Rock
+[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 1, 1, 1],// Ghost
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 0.5, 0, 1],// Dragon
+[1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 1, 0.5, 1],// Dark
+[1, 0.5, 0.5, 0.5, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0.5, 2, 1],// Steel
+[1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1, 1],// Fairy
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);// None
+
+var type_name = new Array("normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy");
+
+var abilities_l = new Array(
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// None
+[1, 0.5, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Thick Fat
+[1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Heatproof
+[1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Levitate
+[1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Volt Absorb
+[1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Water Absorb
+[1, 1.25, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Dry Skin
+[1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Flash Fire
+[1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Sap Sipper
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Filter
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);// Wonder Guard
+
+var ability_name = ["None","Thick Fat","Heatproof","Levitate","Volt Absorb","Water Absorb","Dry Skin","Flash Fire","Sap Sipper","Filter","Wonder Guard"];
+    var type1 = type_name.indexOf(types[0]);
+    var type2 = type_name.indexOf(types[1]);
+
+    if(type2 == -1)
+      type2 = types_l.length-1;
+    
+    var ability = 0;
+
+    for(var x=0; x<ability_name.length-1; x++)
+    {
+      if((ability_name[x] == ability1[index]) ||
+        (ability_name[x] == ability2[index]) ||
+        (ability_name[x] == ability3[index]))
+        ability=x;
+    }
+    var color = new Array();
+    var result = new Array();
+    var output;
+    var i;
+    
+  for (i=0; i<=18; i++)
+  {
+    result[i] = ((types_l[i][type1] * types_l[i][type2]) * abilities_l[ability][i]) 
+    if((types_l[i][type1] * types_l[i][type2]) < 2 && ability == 10){result[i] = 0};
+    if((types_l[i][type1] * types_l[i][type2]) >= 2 && ability == 9){result[i] = result[i] * 0.75};
+    if(result[i] == 1){color[i] = "dmg_normal"};
+    if(result[i] < 1){color[i] = "dmg_resist"};
+    if(result[i] < 0.5){color[i] = "dmg_resist2"};
+    if(result[i] == 0){color[i] = "dmg_immune"};
+    if(result[i] > 1){color[i] = "dmg_weak"};
+    if(result[i] > 2){color[i] = "dmg_weak2"};
+  }
+
+  var weakTo =[];
+  var resTo =[];
+  var imTo =[];
+  var normTo =[];
+  for(var x=0; x<result.length-1; x++)
+  {
+    
+    if(result[x]>1)
+      weakTo.push( [result[x],type_name[x]] );
+    else if(result[x] == 0)
+      imTo.push( [result[x],type_name[x]] );
+    else if(result[x]==1)
+      normTo.push( [result[x],type_name[x]] );
+    else if(result[x]<1 )
+      resTo.push( [result[x],type_name[x]] );
+  }
 
     chats.push({
       id: pokenum,
@@ -222,13 +323,18 @@ angular.module('starter.services', [])
       suggestion: suggestions,
       male: male_perc[index],
       female: female_perc[index],
+      male_int: temp_m,
       abil1: ability1[index],
       abil2: ability2[index],
-      abil3: ability3[index]
+      abil3: ability3[index],
+      abilities: abilities,
+      weak: weakTo,
+      immune: imTo,
+      norm: normTo,
+      resist: resTo
     });
     idnum++;
     pokenum++;
-      
   }
 
   var items =[];

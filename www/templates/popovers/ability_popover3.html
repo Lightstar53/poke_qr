@@ -1,0 +1,22 @@
+
+<div class="modal transparent animated fadeInUp" on-swipe-left="closeModal()">
+  
+   <ion-content><br><br>
+   <h1 class="center">{{chat.abil3}}</h1>
+    <div class="card center animated fadeInUp">
+      <i class="icon ion-arrow-left-b"></i>
+       Hidden ability for {{chat.name[0]}} 
+    </div>
+        <table id="table_id">
+          <th> Ability Name</th>
+          <th> Description</th>
+          <th> Pokemon with this Ability</th>
+          <tr ng-repeat="x in abilities | filter: chat.abil3">
+            <td class="text-positive">{{ x.name }}</td>
+            <td>{{ x.description }}</td>
+            <td><p ng-repeat="ability in x.poke_with_abil">{{ability}} </p></td>
+          </tr>
+        </table>
+  </ion-content>
+  
+  </div>

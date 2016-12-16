@@ -1,39 +1,29 @@
-<ion-view view-title="Items in Sun and Moon">
-   <ion-content class="has-header padding">
-  <label class="item item-input animated fadeInUp">
-      <i class="icon ion-search placeholder-icon"></i>
-      <input type="search" placeholder="Search Items" ng-model="searchText">
-    </label>
+<div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper animated fadeInUp">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" placeholder="Search Items" ng-model="searchText">
+  </label>
+  <button class="button button-icon icon ion-ios-close-empty animated fadeInUp" ng-click="searchText = ''" ng-show="searchText.length">
+  </button>
+</div>
 
-		  
-      <div class="card animated fadeInUp">
-      	<div class="item item-divider" >
-              <p>Pokeballs</p>
-       	</div>
-          <table id="table_id">
-          	<th> Picture</th>
-            <th> Name</th>
-            <th> Effect</th>
-            <th> Location</th>
-            <tr class ="animated fadeInUp" ng-repeat="x in pokeballs | filter:searchText ">
-            <td><img ng-src="{{x.icon}}"></td>
-              <td>{{ x.name }}</td>
-              <td>{{ x.effect }}</td>
-              <td>{{ x.location }}</td>
-            </tr>
-          </table>
-        </div>
-
-        <br>
-        <br>
-
-
-
-	</ion-content>
-	<div class="bar bar-footer bar-balanced">
-    <label class="item item-input">
-      <i class="icon ion-search placeholder-icon"></i>
-      <input type="search" placeholder="Search Items" ng-model="searchText">
-    </label>
+<ion-content class="has-header ">
+  <div class="card animated fadeInUp">
+  	<div class="item item-divider" >
+          <p>Pokeballs</p>
+   	</div>
+      <table id="table_id">
+      	<th> Picture</th>
+        <th> Name</th>
+        <th> Effect</th>
+        <th> Location</th>
+        <tr class ="animated fadeInUp" ng-repeat="x in pokeballs | filter:searchText ">
+        <td><img ng-src="{{x.icon}}"></td>
+          <td>{{ x.name }}</td>
+          <td>{{ x.effect }}</td>
+          <td>{{ x.location }}</td>
+        </tr>
+      </table>
   </div>
-</ion-view>
+  <br><br>
+</ion-content>
