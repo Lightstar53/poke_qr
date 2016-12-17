@@ -2,12 +2,15 @@
   "name": "poke_qr",
   "version": "1.1.1",
   "description": "poke_qr: An Ionic project",
+  "repository": "https://github.com/Lightstar53/poke_qr",
+  "keywords": ["ionic", "lightstar53", "poke_qr"],
   "dependencies": {
+    "express": "^4.14.0",
     "gulp": "^3.5.6",
-    "gulp-sass": "^2.0.4",
     "gulp-concat": "^2.2.0",
     "gulp-minify-css": "^0.3.0",
-    "gulp-rename": "^1.2.0"
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4"
   },
   "devDependencies": {
     "bower": "^1.3.3",
@@ -22,5 +25,8 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [],
+  "scripts": {
+    "start": "node server.js"
+  }
 }

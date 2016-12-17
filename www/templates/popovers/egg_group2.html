@@ -1,12 +1,14 @@
 <div class="modal transparent animated fadeInUp" on-swipe-left="closeModal()">
-	<div class="padding card ">
-		<p> Swipe Left to Exit 
-		<i class="icon ion-arrow-down-b"></i></p>
-	</div>
-	<div class="padding card ">
-		<div class="item item-divider" >
-			<p class = "center title">{{chat.egg2}} Egg Group</p>
+	<ion-content>
+		<div class="padding card ">
+			<p> Swipe Left to Exit 
+			<i class="icon ion-arrow-down-b"></i></p>
 		</div>
-        <img class = "padding" ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: showEgg2">
-    </div>
+		<div class="padding card ">
+			<div class="item item-divider" >
+				<p class = "center title">{{chat.egg2}} Egg Group</p>
+			</div>
+	        <img class = "padding" ng-src="{{chet.reg_sprite[0]}}" ng-repeat="chet in chats | filter: showEgg2">
+	    </div>
+	</ion-content>
 </div>
